@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='cmsplugin_openxzone',
-    version='0.1.2',
+    version='0.1.3',
     author='Piotr Kilczuk',
     author_email='piotr@hint.pl',
     #url='http://hint.pl/',
@@ -12,5 +12,4 @@ setup(
     packages = ['cmsplugin_openxzone',],
     package_data={'cmsplugin': ['templates/*',]},
     provides=['cmsplugin_openxzone',],
-    install_requires = ['django-inline-ordering>=0.1.1', 'easy-thumbnails',]
 )
