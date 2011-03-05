@@ -11,24 +11,16 @@ class CMSOpenXZonePlugin(CMSPluginBase):
     
     def render(self, context, instance, placeholder):
         context.update({
-            'js': instance.get_tag(),
-            'zone': instance.get_zone_dict(),
+            'js': instance.tag,
+            'zone': {
+                'height': instance.height,
+                'id': instance.zone_id, 
+                'published_id': instance.publisher_id,
+                'type': instance.type,
+                'width': instance.width,
+                'name': instance.zone_name,
+            }
         })
         return context 
 
 plugin_pool.register_plugin(CMSOpenXZonePlugin)
-
-
-#def openx(request):
-#    """Adds OpenX zone information to context
-#    
-#    Could possibly be refactored to allow distinction between 
-#    """
-#    
-#    import django_openx as openx
-#    
-#    ctx = {}
-#    publisher = openx.Publisher.get(2)
-#    for zone in publisher.zones:
-#        ctx[zone.zoneId] = zone.generate_tag()
-#    return {'OPENX_ZONES': ctx}
