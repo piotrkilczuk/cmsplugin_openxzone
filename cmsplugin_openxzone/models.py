@@ -7,13 +7,13 @@ class OpenXZonePlugin(CMSPlugin):
     zone_id = models.PositiveSmallIntegerField()
     
     # cache fields for data obtained via XML-RPC
-    height = models.PositiveSmallIntegerField(default=0)
-    publisher_id = models.PositiveSmallIntegerField(default=0)
-    tag = models.TextField()
-    type = models.PositiveSmallIntegerField(default=0)
-    width = models.PositiveSmallIntegerField(default=0)
-    zone_id = models.PositiveSmallIntegerField(default=0)
-    zone_name = models.CharField(max_length=255)
+    height = models.PositiveSmallIntegerField(default=0, editable=False)
+    publisher_id = models.PositiveSmallIntegerField(default=0, editable=False)
+    tag = models.TextField(editable=False)
+    type = models.PositiveSmallIntegerField(default=0, editable=False)
+    width = models.PositiveSmallIntegerField(default=0, editable=False)
+    zone_id = models.PositiveSmallIntegerField(default=0, editable=False)
+    zone_name = models.CharField(max_length=255, editable=False)
     
     def __get_zone_dict(self):
         return Zone.get(self.zone_id)
