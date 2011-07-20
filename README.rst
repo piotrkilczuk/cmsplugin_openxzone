@@ -8,11 +8,11 @@ Provides OpenX brigde for DjangoCMS. Allows user to embed OpenX zone as a block 
 Installation
 ============
 
-First, install required django_openx:
+First, install required django_openx using PIP:
 
-  $> pip install -e svn+http://django-openx.googlecode.com/svn/trunk/#egg=django_openx
+  $> pip install -e git://github.com/hint/django-openx.git#egg=django_openx
 
-Install using PIP:
+Then install cmsplugin_openxzone using PIP:
 
   $> pip install -e git://github.com/centralniak/cmsplugin_openxzone.git#egg=cmsplugin_openxzone
 
