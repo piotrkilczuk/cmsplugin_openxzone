@@ -5,14 +5,13 @@ from django_openx.zone import Zone
 
 class OpenXZonePlugin(CMSPlugin):
     zone_id = models.PositiveSmallIntegerField()
-    
+
     # cache fields for data obtained via XML-RPC
     height = models.PositiveSmallIntegerField(default=0, editable=False)
     publisher_id = models.PositiveSmallIntegerField(default=0, editable=False)
     tag = models.TextField(editable=False)
     type = models.PositiveSmallIntegerField(default=0, editable=False)
     width = models.PositiveSmallIntegerField(default=0, editable=False)
-    zone_id = models.PositiveSmallIntegerField(default=0, editable=False)
     zone_name = models.CharField(max_length=255, editable=False)
     
     def __get_zone_dict(self):
@@ -36,6 +35,5 @@ class OpenXZonePlugin(CMSPlugin):
         self.publisher_id = zone_dict['publisher_id']
         self.type = zone_dict['type']
         self.width = zone_dict['width']
-        self.zone_id = zone_dict['zone_id']
         self.zone_name = zone_dict['zone_name']
         super(OpenXZonePlugin, self).save(*args, **kwargs)
