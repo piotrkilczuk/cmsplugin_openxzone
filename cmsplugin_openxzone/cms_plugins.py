@@ -12,6 +12,7 @@ class CMSOpenXZonePlugin(CMSPluginBase):
     def render(self, context, instance, placeholder):
         context.update({
             'js': instance.tag,
+            'js_admin': instance.tag_admin,
             'zone': {
                 'height': instance.height,
                 'id': instance.zone_id, 

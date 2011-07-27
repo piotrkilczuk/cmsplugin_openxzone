@@ -1,1 +1,9 @@
-<div class="openXZone {{ zone.width }}x{{ zone.height }}" id="openXZone{{ zone.id }}">{{ js|safe }}</div>
+{% spaceless %}
+    <div class="openXZone {{ zone.width }}x{{ zone.height }}" id="openXZone{{ zone.id }}">
+        {% if request.user.is_staff %}
+            {{ js_admin|safe }}
+        {% else %}
+            {{ js|safe }}
+        {% endif %}
+    </div>
+{% endspaceless %}

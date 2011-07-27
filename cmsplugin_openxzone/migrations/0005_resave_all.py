@@ -41,9 +41,10 @@ class Migration(DataMigration):
             'height': ('django.db.models.fields.PositiveSmallIntegerField', [], {'default': '0'}),
             'publisher_id': ('django.db.models.fields.PositiveSmallIntegerField', [], {'default': '0'}),
             'tag': ('django.db.models.fields.TextField', [], {}),
+            'tag_admin': ('django.db.models.fields.TextField', [], {}),
             'type': ('django.db.models.fields.PositiveSmallIntegerField', [], {'default': '0'}),
             'width': ('django.db.models.fields.PositiveSmallIntegerField', [], {'default': '0'}),
-            'zone_id': ('django.db.models.fields.PositiveSmallIntegerField', [], {'default': '0'}),
+            'zone_id': ('django.db.models.fields.PositiveSmallIntegerField', [], {}),
             'zone_name': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         }
     }
